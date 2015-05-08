@@ -83,7 +83,15 @@
             <script>
                 function initVendedores2(e) 
                 {
-                    callWebServiceList2(codigoTempS,10); 
+                    var codigo111S = "";
+                    if (localStorage.getItem("codigoTempS") != undefined) 
+                        codigo111S  = localStorage.getItem("codigoTempS");
+			        else
+                    {
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    callWebServiceList(codigo111S,10); 
                 }
                 
                 function callWebServiceList2(codigo,tipo) 
@@ -182,7 +190,10 @@
                     {
                         codigoTempV = var1;
                         app.navigate("Vendedores3.html","slide:left");
-                        //callWebServiceList(var1, tipo);    
+                        //callWebServiceList(var1, tipo);  
+                        
+                        localStorage.setItem("codigoTempV", String(var1));
+                        app.navigate("Vendedores3.html","slide:left"); 
                     }  
                 }
                 

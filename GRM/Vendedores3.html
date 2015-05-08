@@ -83,7 +83,15 @@
             <script>
                 function initVendedores3(e) 
                 {
-                    callWebServiceList3(codigoTempV,20);
+                    var codigo111V = "";
+                    if (localStorage.getItem("codigoTempV") != undefined) 
+                        codigo111V  = localStorage.getItem("codigoTempV");
+			        else
+                    {
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    callWebServiceList(codigo111V,20);
                 }
                 
                 function callWebServiceList3(codigo,tipo) 

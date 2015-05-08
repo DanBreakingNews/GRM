@@ -83,12 +83,15 @@
             <script>
                 function initVendedores(e) 
                 {
-                    callWebServiceList(codigoTempG,40);   
-                }
-                
-                function restart() 
-                {
-                    callWebServiceList(codigo,getType(codigo));   
+                    var codigo111G = "";
+                    if (localStorage.getItem("codigoTempG") != undefined) 
+                        codigo111G  = localStorage.getItem("codigoTempG");
+			        else
+                    {
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    callWebServiceList(codigo111G,40);   
                 }
                 
                 function callWebServiceList(codigo,tipo) 
@@ -185,9 +188,10 @@
                     }
                     else
                     {
-                        codigoTempS = var1;
-                        app.navigate("Vendedores2.html","slide:left")
-                        //callWebServiceList(var1, tipo);    
+                        //codigoTempS = var1;
+                        //app.navigate("Vendedores2.html","slide:left")
+                        localStorage.setItem("codigoTempS", String(var1));
+                        app.navigate("Vendedores2.html","slide:left");    
                     }  
                 }
                 

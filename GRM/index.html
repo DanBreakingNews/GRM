@@ -186,17 +186,23 @@
                     }
                     else
                     {
-                        codigo = parseInt(result.Codigo_Venta); 
-                        id = parseInt(result.id);
-                        tipo = parseInt(result.Tipo);
-                    
+                        var codigo = parseInt(result.Codigo_Venta); 
+                        var id = parseInt(result.id);
+                        var tipo = parseInt(result.Tipo);
+                        
+                        localStorage.setItem("codigo", String(codigo));
+                        localStorage.setItem("id", String(id));
+                        localStorage.setItem("tipo", String(tipo));
+                        
                         app.navigate("inicio.html","zoom");
                     }
                 }
                 catch(err)
                 {    
-                    codigo = 0;
-                    id = 0;
+                    localStorage.removeItem("codigo");
+                    localStorage.removeItem("id");
+                    localStorage.removeItem("tipo");
+                    
                     alert("Sus credenciales no son validas.");
                 }
             }

@@ -172,9 +172,28 @@
                 {
                     try
                     {
+                        var codigo111 = "";
+                        if (localStorage.getItem("codigo") != undefined) 
+                            codigo111  = localStorage.getItem("codigo");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
+                        var tipo111 = "";
+                        if (localStorage.getItem("tipo") != undefined) 
+                            tipo111  = localStorage.getItem("tipo");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+		                
+                        
                         var vaType = "GET";
                         var vaUrl = "http://portal.diapa.net:120/Home/VentaPorSemana";
-                        var vaData = 'Codigo=' + String(codigo) + '&Tipo=' + String(tipo) + '&Semana=' + String(semana); 
+                        var vaData = 'Codigo=' + String(codigo111) + '&Tipo=' + String(tipo111) + '&Semana=' + String(semana); 
                         var vaContentType = "application/json; charset=utf-8";
                         var vaDataType = "json";
                         var vaProcessData = true; 
@@ -254,22 +273,40 @@
                 
                 function Click001() 
                 {
-                    if ( tipo == 40) 
+                    var codigo111 = "";
+                    if (localStorage.getItem("codigo") != undefined) 
+                        codigo111  = localStorage.getItem("codigo");
+			        else
                     {
-                       codigoTempG = codigo;
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    
+                    var tipo111 = "";
+                    if (localStorage.getItem("tipo") != undefined) 
+                        tipo111  = localStorage.getItem("tipo");
+			        else
+                    {
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    
+                    if ( tipo111 == 40) 
+                    {
+                       localStorage.setItem("codigoTempG", String(codigo111));
                        app.navigate("Vendedores.html","slide:left");   
                     }
-                    else if( tipo == 10 ) 
+                    else if( tipo111 == 10 ) 
                     {
-                       codigoTempS = codigo;
+                       localStorage.setItem("codigoTempS", String(codigo111));
                        app.navigate("Vendedores2.html","slide:left");	
                     }
-                    else if( tipo == 20 ) 
+                    else if( tipo111 == 20 ) 
                     {
-                       codigoTempV = codigo;
+                       localStorage.setItem("codigoTempV", String(codigo111));
                        app.navigate("Vendedores3.html","slide:left");	
                     }
-                    else if( tipo == 30 ) 
+                    else if( tipo111 == 30 ) 
                     {
                       alert("Esta opción no esta disponible para su perfil")	
                     }

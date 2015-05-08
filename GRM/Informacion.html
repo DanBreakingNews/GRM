@@ -187,10 +187,28 @@
                 {
                     try
                     {
+                        var codigo111 = "";
+                        if (localStorage.getItem("codigo") != undefined) 
+                            codigo111  = localStorage.getItem("codigo");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
+                        var tipo111 = "";
+                        if (localStorage.getItem("tipo") != undefined) 
+                            tipo111  = localStorage.getItem("tipo");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var vaType = "GET";
                         //var vaUrl = "http://portal.diapa.net:120/Home/InformacionDelDia";
                         var vaUrl = "http://portal.diapa.net:120/Home/InformacionDelDia";
-                        var vaData = 'Codigo=' + String(codigo) + '&Tipo=' + String(tipo); 
+                        var vaData = 'Codigo=' + String(codigo111) + '&Tipo=' + String(tipo111); 
                         var vaContentType = "application/json; charset=utf-8";
                         var vaDataType = "json";
                         var vaProcessData = true; 
