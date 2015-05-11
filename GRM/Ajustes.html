@@ -81,10 +81,19 @@
                              return;
                         }
                         
+                        var username111 = "";
+                        if (localStorage.getItem("username") != undefined) 
+                            username111  = localStorage.getItem("username");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var vaType = "GET";
                         //var vaUrl = "http://portal.diapa.net:120/Home/InformacionDelDia";
                         var vaUrl = "http://portal.diapa.net:120/Home/EnviarMensaje";
-                        var vaData = 'username=' + String(username) + 
+                        var vaData = 'username=' + String(username111) + 
                                      '&asunto=' + String(asunto) + 
                                      '&mensaje=' + String(mensaje);
                         var vaContentType = "application/json; charset=utf-8";

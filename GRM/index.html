@@ -26,6 +26,7 @@
         <div id="view-login" 
              data-title="Login" 
              data-role="view"
+             data-transition="fade"
              >
                 <div id="main_panel">
                     <img src="./styles/images/diapa.png" style="height:80px; width:120px;">
@@ -189,10 +190,12 @@
                         var codigo = parseInt(result.Codigo_Venta); 
                         var id = parseInt(result.id);
                         var tipo = parseInt(result.Tipo);
+                        var username = result.Email;
                         
                         localStorage.setItem("codigo", String(codigo));
                         localStorage.setItem("id", String(id));
                         localStorage.setItem("tipo", String(tipo));
+                        localStorage.setItem("username", String(username));
                         
                         app.navigate("inicio.html","zoom");
                     }

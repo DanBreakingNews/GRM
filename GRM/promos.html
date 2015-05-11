@@ -80,7 +80,8 @@
                 
                function goToNext(id) 
                {
-                   cartillaTipo1 = id;
+                   //cartillaTipo1 = id;
+                   localStorage.setItem("cartillaTipo1", String(id));
                    app.navigate("cliente-lista-centro.html","slide:left"); 
                }
             </script>

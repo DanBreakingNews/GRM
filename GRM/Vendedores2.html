@@ -16,8 +16,8 @@
         <div id="tabstrip-vendedores2" 
              data-title="Vendedores" 
              data-role="view"
-             data-transition="fade"
              data-show="initVendedores2"
+             data-transition="fade"
              >
             <div data-role="header">
                 <div data-role="navbar" style="background-color: black; color: white;">
@@ -91,7 +91,7 @@
                         alert("Error al con la data de sesión")    
                         return;   
                     }
-                    callWebServiceList(codigo111S,10); 
+                    callWebServiceList2(codigo111S,10); 
                 }
                 
                 function callWebServiceList2(codigo,tipo) 
@@ -188,8 +188,8 @@
                     }
                     else
                     {
-                        codigoTempV = var1;
-                        app.navigate("Vendedores3.html","slide:left");
+                        //codigoTempV = var1;
+                        //app.navigate("Vendedores3.html","slide:left");
                         //callWebServiceList(var1, tipo);  
                         
                         localStorage.setItem("codigoTempV", String(var1));

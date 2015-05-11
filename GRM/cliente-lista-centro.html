@@ -81,7 +81,8 @@
                 
                function goToNext2(id) 
                {
-                   cartillaTipo2 = id;
+                   //cartillaTipo2 = id;
+                   localStorage.setItem("cartillaTipo2", String(id));
                    app.navigate("clc.html","slide:left"); 
                }
             </script>

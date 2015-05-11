@@ -149,11 +149,20 @@
                         var Key3 = CryptoJS.enc.Utf8.parse("AAECAwQFBgcICQoLDA0ODw==");
                         var IV3 = CryptoJS.enc.Utf8.parse("YWlFLVEZZUFNaWl=");
                         var hash3 = CryptoJS.AES.encrypt(password3,Key3,{iv:IV3, mode:CryptoJS.mode.CBC,padding:CryptoJS.pad.Pkcs7});
-                    
+                        
+                        var username111 = "";
+                        if (localStorage.getItem("username") != undefined) 
+                            username111  = localStorage.getItem("username");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var vaType = "GET";
                         //var vaUrl = "http://portal.diapa.net:120/Home/InformacionDelDia";
                         var vaUrl = "http://portal.diapa.net:120/Home/CambioContraseña";
-                        var vaData = 'username=' + String(username) + 
+                        var vaData = 'username=' + String(username111) + 
                                      '&actual=' + String(hash1) + 
                                      '&nueva=' + String(hash2) + 
                                      '&confirmacion=' + String(hash3);

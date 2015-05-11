@@ -85,9 +85,27 @@
                {
                     try
                     {
+                        var cartillaTipo1_111 = "";
+                        if (localStorage.getItem("cartillaTipo1") != undefined) 
+                            cartillaTipo1_111  = localStorage.getItem("cartillaTipo1");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
+                        var cartillaTipo2_111 = "";
+                        if (localStorage.getItem("cartillaTipo2") != undefined) 
+                            cartillaTipo2_111  = localStorage.getItem("cartillaTipo2");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var repType = "GET";
                         var repUrl = "http://portal.diapa.net:120/Home/Cartillas";
-                        var repData = 'tipo1=' + String(cartillaTipo1) + '&tipo2=' + String(cartillaTipo2) ; 
+                        var repData = 'tipo1=' + String(cartillaTipo1_111) + '&tipo2=' + String(cartillaTipo2_111) ; 
                         var repContentType = "application/json; charset=utf-8";
                         var repDataType = "json";
                         var repProcessData = true; 
@@ -148,12 +166,21 @@
                
                function detallePromo( name ) 
                {
-                   cartillaNombre = String(name);
-                   if (cartillaTipo1 == 1) 
+                   var cartillaTipo1_111 = "";
+                   if (localStorage.getItem("cartillaTipo1") != undefined) 
+                       cartillaTipo1_111  = localStorage.getItem("cartillaTipo1");
+			       else
+                   {
+                       alert("Error al con la data de sesión")    
+                       return;   
+                   }
+                   
+                   localStorage.setItem("cartillaNombre", String(name));
+                   if (cartillaTipo1_111 == 1) 
                    {	
                        app.navigate("boni.html","overlay:left");
                    }
-                   else if ( cartillaTipo1 == 2 )
+                   else if ( cartillaTipo1_111 == 2 )
                    {
                        app.navigate("desc.html","overlay:left");   
                    }

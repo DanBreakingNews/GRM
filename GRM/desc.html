@@ -89,9 +89,27 @@
             	{
                     try
                     {
+                        var cartillaTipo2_111 = "";
+                        if (localStorage.getItem("cartillaTipo2") != undefined) 
+                            cartillaTipo2_111  = localStorage.getItem("cartillaTipo2");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
+                        var cartillaNombre111 = "";
+                        if (localStorage.getItem("cartillaNombre") != undefined) 
+                            cartillaNombre111  = localStorage.getItem("cartillaNombre");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var vType = "GET";
                         var vUrl = "http://portal.diapa.net:120/Home/CartillasDetalle";
-                        var vData = 'tipo1=2&tipo2=' + String(cartillaTipo2) + '&nombre=' + String(cartillaNombre)  ;
+                        var vData = 'tipo1=2&tipo2=' + String(cartillaTipo2_111) + '&nombre=' + String(cartillaNombre111)  ;
                         var vContentType = "application/json; charset=utf-8";
                         var vDataType = "json";
                         var vProcessData = true; 

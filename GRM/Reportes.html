@@ -50,35 +50,31 @@
 			</script>
             
             <script>
-               function restartReportes()
-               {
-                   callWebServiceReprotes(); 
-               }
                function initReportes(e) 
                {
                    callWebServiceReprotes(); 
                }
                function reportClick(index,col)
                {
-                   param_index = index;
-                   param_col = col;
+                   //param_index = index;
+                   //param_col = col;
+                   
+                   localStorage.setItem("param_index", String(index));
+                   localStorage.setItem("param_col", String(col));
                    
                    if( col == 1 )
                    {
                        app.navigate("Reporte001.html","slide:left");
-                       callWebServiceDeitel001(index,col);
                    }
                    else if( col == 2 )
                    {
-                       app.navigate("Reporte002.html","slide:left");
-                       callWebServiceDeitel002(index,col);
+                       app.navigate("Reporte002.html","slide:left");   
                    }
                    else if( col == 3 )
                    {
-                       app.navigate("Reporte003.html","slide:left"); 
-                       //callWebServiceDeitel003(index,col);
-                          
-                   }else if( col == 4 )
+                       app.navigate("Reporte003.html","slide:left");      
+                   }
+                   else if( col == 4 )
                    {
                        app.navigate("Reporte004.html","slide:left");    
                    }
@@ -86,16 +82,25 @@
                    {
                        app.navigate("Reporte005.html","slide:left");     
                    }
-                   //callWebServiceDeitel(index,col);
+                   
                }
                 
                function callWebServiceReprotes() 
                {
                     try
                     {
+                        var id111 = "";
+                        if (localStorage.getItem("id") != undefined) 
+                            id111  = localStorage.getItem("id");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var repType = "GET";
                         var repUrl = "http://portal.diapa.net:120/Home/ListaReportes";
-                        var repData = 'id=' + String(id) ; 
+                        var repData = 'id=' + String(id111) ; 
                         var repContentType = "application/json; charset=utf-8";
                         var repDataType = "json";
                         var repProcessData = true; 

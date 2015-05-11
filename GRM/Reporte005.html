@@ -69,7 +69,24 @@
                 
                 function showReportes005(e)
                 {
-                    callWebServiceDeitel005(param_index,param_col); 
+                    var param_index111 = "";
+                    if (localStorage.getItem("param_index") != undefined) 
+                        param_index111  = localStorage.getItem("param_index");
+			        else
+                    {
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    
+                    var param_col111 = "";
+                    if (localStorage.getItem("param_col") != undefined) 
+                        param_col111  = localStorage.getItem("param_col");
+			        else
+                    {
+                        alert("Error al con la data de sesión")    
+                        return;   
+                    }
+                    callWebServiceDeitel005(param_index111,param_col111); 
                 }
                 
                 function backReporte005(e) 
@@ -81,9 +98,18 @@
                {
                     try
                     {
+                        var codigo111 = "";
+                        if (localStorage.getItem("codigo") != undefined) 
+                            codigo111  = localStorage.getItem("codigo");
+			            else
+                        {
+                            alert("Error al con la data de sesión")    
+                            return;   
+                        }
+                        
                         var detType = "GET";
                         var detUrl = "http://portal.diapa.net:120/home/Detalle";
-                        var detData = 'id=' + String(index) + '&codigo=' + String(codigo); 
+                        var detData = 'id=' + String(index) + '&codigo=' + String(codigo111); 
                         var detContentType = "application/json; charset=utf-8";
                         var detDataType = "json";
                         var detProcessData = true; 
