@@ -77,21 +77,7 @@
              
                 function initMiPerfil(e) 
                 {
-                    try 
-                    {
-                	    if (localStorage.getItem("password") != undefined) 
-                        {
-                            document.getElementById("password1").value  = localStorage.getItem("password");
-			            }
-		                else 
-                        {
-			                document.getElementById("password1").value  = "";
-		                }
-                    } 
-                    catch (ex) 
-                    {
-                        alert("Error al cargar datos de memoria");
-                    }
+                    
                 }
                 
                 function ServicioMiPerfil()
@@ -197,12 +183,9 @@
                     {                          
                         if ( String(result.MENSAJE) == "Contraseña actualizada con éxito." ) 
                         {
-                            var newpassword = document.getElementById("password2").value;
-                            document.getElementById("password1").value = newpassword;
+                            document.getElementById("password1").value = "";
                             document.getElementById("password2").value = "";
                             document.getElementById("password3").value = "";
-                            
-                            localStorage.setItem("password", newpassword);
                         }
                         
                         alert(String(result.MENSAJE));	

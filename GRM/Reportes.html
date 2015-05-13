@@ -52,13 +52,14 @@
             <script>
                function initReportes(e) 
                {
+                   kendo.mobile.application.scroller().reset();
                    callWebServiceReprotes(); 
                }
                function reportClick(index,col)
                {
                    //param_index = index;
                    //param_col = col;
-                   
+                   kendo.mobile.application.scroller().reset();
                    localStorage.setItem("param_index", String(index));
                    localStorage.setItem("param_col", String(col));
                    

@@ -92,14 +92,6 @@
 			             document.getElementById("username").value  = "";
 		            }
                     
-                    if (localStorage.getItem("password") != undefined) 
-                    {
-                        document.getElementById("password").value  = localStorage.getItem("password");
-			        }
-		            else 
-                    {
-			             document.getElementById("password").value  = "";
-		            }
                 } catch (ex) 
                 {
                     //alert("Error al cargar datos de memoria");
@@ -114,7 +106,6 @@
                     password = element = document.getElementById("password").value;
                     
                     localStorage.setItem("username", username);
-                    localStorage.setItem("password", password);
                     
                     if ( username == null || username == "")
                     {
@@ -187,6 +178,7 @@
                     }
                     else
                     {
+                        element = document.getElementById("password").value = "";
                         var codigo = parseInt(result.Codigo_Venta); 
                         var id = parseInt(result.id);
                         var tipo = parseInt(result.Tipo);
