@@ -31,7 +31,7 @@
             </div>    
             
             <div class="indicators_container">
-            	Venta y Cobro
+            	Venta Acutal y Año Anterior
                 <div id="two_panel_container">
                     <div class="porcentaje_container">
                         <span id="vpor" class="porcentaje_label">00.0%</span>
@@ -43,16 +43,13 @@
             </div>
             
             <div id="week_container">
-            	<ul data-role="buttongroup" data-index="0" data-select="onSelect">
-                	<li style="background-color: #C71B1B;">&nbsp;S01&nbsp;</li>
-                	<li style="background-color: #C71B1B;">&nbsp;S02&nbsp;</li>
-                	<li style="background-color: #C71B1B;">&nbsp;S03&nbsp;</li>
-                	<li style="background-color: #C71B1B;">&nbsp;S04&nbsp;</li>
+            	<ul data-role="buttongroup" data-index="0" data-select="onSelect" style="width:86%">
+                	<li style="background-color: #C71B1B; width:98%">Seleccionar Período</li>
             	</ul>
             </div>
             
             <div class="indicators_container">
-                Avance de Venta 
+                Mes actual 
                 <div class="deitel_container" >
                     <table class="deitel_table">
                         <tr>
@@ -89,7 +86,7 @@
                         </tr>
                     </table>
                 </div>
-                Avance de Cobro 
+                Año anterior
                 <div class="deitel_container">
                     <table class="deitel_table">
                         <tr>
@@ -116,18 +113,39 @@
                                 <label id="c3">L. 0.00</label>
                             </td>
                         </tr>
+                    </table> 
+                </div>
+                Promedio ultimos 3 meses
+                <div class="deitel_container">
+                    <table class="deitel_table">
                         <tr>
                             <td class="left_column">
-                                Dias Prom. Pago
+                                Proyectado
                             </td>
                             <td class="right_column">
-                                <label id="c4">0.00</label>
+                                <label id="c1">L. 0.00</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left_column">
+                                Ejecutado
+                            </td>
+                            <td class="right_column">
+                                <label id="c2">L. 0.00</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left_column">
+                                Diferencia
+                            </td>
+                            <td class="right_column">
+                                <label id="c3">L. 0.00</label>
                             </td>
                         </tr>
                     </table> 
                 </div>
             </div>
-            <div style="margin:auto; width:100%; padding-top:1em;">
+            <!--<div style="margin:auto; width:100%; padding-top:1em;">
                 
                 <div style="text-align:center;">
                     <a data-role="button" data-animated="true" style="display:inline-block; width:38%; font-size: .9em; background-color: rgb(117,113,113);" onClick="Click003()">Informe del Día</a>
@@ -144,7 +162,7 @@
                     <a data-role="button" data-animated="true" style="display:inline-block; width:38%; font-size: .9em; background-color: rgb(117,113,113);" onClick="Click006()">Soporte</a>
                 </div>
                 
-            </div>
+            </div>-->
             
             <script>
             
